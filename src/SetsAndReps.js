@@ -16,9 +16,11 @@ class SetsAndReps extends React.Component {
         return(
             <div>
     
-            <button onClick={this._generateSets}>Sets & Reps</button>
-            <h5>{this.state.sets}</h5>
-            <h5>{this.state.reps}</h5> 
+            {/* <button onClick={this._generateSets}>Sets & Reps</button> */}
+            <h4>Sets & Reps</h4>
+
+            <h5>{this.props.setNum}</h5>
+            <h5>{this.props.repNum}</h5> 
             </div>
         );
     }

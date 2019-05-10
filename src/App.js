@@ -13,10 +13,13 @@ function App() {
       </header>
         <div className="Components">
           <WorkoutTypes />
+          
         </div>
        
     </div>
   );
 }
+
+
 
 export default App;

@@ -1,7 +1,7 @@
 .App {
   text-align: left;
   background-color: #303030;
-  line-height: 2px;
+  /* line-height: 2px; */
   display: flex;
 }
 
@@ -24,12 +24,12 @@
 
 .Components {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   margin-left: 50px;
   color: rgb(175, 252, 68);
-  width: 25%;
+  width: 100%;
 }
 
 .App-link {
@@ -44,16 +44,21 @@ button {
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 2px;
-  width: 150px;
+  width: 100px;
   transition: all 0.5s;
   cursor: pointer;
   height: 25px;
-  margin: 20px 0 20 0px;
+  margin: 10px;
 }
 
 button:hover {
   background-color: rgb(255, 35, 149); /* Green */
   color: white;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
