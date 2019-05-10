@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import BodyPartChooser from './BodyPartChooser';
 import Timer from './Timer';
 import WorkoutTypes from './WorkoutTypes'
 import SetsAndReps from './SetsAndReps';
