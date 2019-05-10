@@ -16,10 +16,9 @@ class SetsAndReps extends React.Component {
         return(
             <div>
     
-            <button onClick={this._generateSets}>Sets</button>
+            <button onClick={this._generateSets}>Sets & Reps</button>
             <h5>{this.state.sets}</h5>
-            <button onClick={this._generateReps}>Reps</button>
-            <h5>{this.state.reps}</h5>
+            <h5>{this.state.reps}</h5> 
             </div>
         );
     }
@@ -27,17 +26,11 @@ class SetsAndReps extends React.Component {
 
     _generateSets = () => {
         const rand = sets[Math.floor(Math.random() * sets.length)];
+        const rand2 = reps[Math.floor(Math.random() * reps.length)];
         console.log(rand);
         this.setState({
-            sets: rand
-        });
-    }
-
-    _generateReps = () => {
-        const rand = reps[Math.floor(Math.random() * reps.length)];
-        console.log(rand);
-        this.setState({
-            reps: rand
+            sets: rand,
+            reps: rand2
         });
     }
 

@@ -2,23 +2,20 @@ import React from 'react';
 import './App.css';
 import BodyPartChooser from './BodyPartChooser';
 import Timer from './Timer';
-import WorkoutName from './WorkoutName'
+import WorkoutTypes from './WorkoutTypes'
 import SetsAndReps from './SetsAndReps';
-// import { Route } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1>EXERgen</h1>
-        <h3>Workout generator & tracker.</h3>
+        <h3>Workout generator and tracker.</h3>
       </header>
         <div className="Components">
-          <SetsAndReps />
-          <WorkoutName />
-          <Timer countdown={3}/>
+          <WorkoutTypes />
         </div>
-        {/* <BodyPartChooser /> */}
+       
     </div>
   );
 }
