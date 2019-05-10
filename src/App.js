@@ -1,23 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import BodyPartChooser from './BodyPartChooser';
+import Timer from './Timer';
+import WorkoutName from './WorkoutName'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Exergen</h1>
+        <h3>Workout generator & tracker.</h3>
+
+        {/* <BodyPartChooser /> */}
+        <Timer />
+        <WorkoutName />
       </header>
     </div>
   );
