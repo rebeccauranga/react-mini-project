@@ -22,15 +22,20 @@ class WorkoutTypes extends React.Component {
     render() {
         return(
             <div>
-                <h4>Exercises</h4>
-                    <button onClick={this._wrapperFunction}> Lower Body </button>
-                        <LowerBodyExercises lowerExercises={this.state.lowerExercises} />
-                    <button onClick={this._updateUpperExercises}> Upper Body </button>
+
+                <div className={"workout"}>
+                        <button onClick={this._wrapperFunction}> Lower Body </button>
+                    <h4>Exercises</h4>
+                            <LowerBodyExercises lowerExercises={this.state.lowerExercises} />
+                            <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/>
+                </div>
+
                         <UpperBodyExercises upperExercises={this.state.upperExercises}/>
-                    <button onClick={this._updateCardioExercises}> Cardio </button>
+                    <button onClick={this._updateUpperExercises}> Upper Body </button>
+
                         <CardioExercises cardioExercises={this.state.cardio}/> 
+                    <button onClick={this._updateCardioExercises}> Cardio </button>
                         
-                <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/>
             </div>
         );
     }
