@@ -12,7 +12,7 @@ import {
     withRouter
 } from 'react-router-dom'; 
 
-function Home() {
+function Workouts() {
   return (
     <div className="App">
       <header className="App-header">
@@ -22,10 +22,9 @@ function Home() {
         <h4><Link to="/"> Home Page</Link></h4>
         <h4><Link to="/workouts"> Workouts</Link></h4>
 
-
       </header>
         <div className="Components">
-          <h1>Home page</h1>
+          <WorkoutTypes />
         </div>
     </div>
   );
@@ -33,4 +32,4 @@ function Home() {
 
 
 
-export default Home;
+export default Workouts;

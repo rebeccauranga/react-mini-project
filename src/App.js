@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './Home'
 import Timer from './Timer';
+import Workouts from './Workouts'
 import WorkoutTypes from './WorkoutTypes';
 import SetsAndReps from './SetsAndReps';
 import SavedRoutines from './SavedRoutines';
@@ -25,6 +26,7 @@ render() {
     <div className="App">
       <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/workouts" component={Workouts} />
           <Route  path="/routines" 
         render= {(props) => (
           <SavedRoutines
