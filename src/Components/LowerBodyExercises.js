@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 const lowerBodyExercises = ['Back Squats', 'Sumo Deadlifts', 'Goblet Squats', 'Romanian Deadlifts', 'Hip Thrusts', 'Jump Squats', 'Lunges', 'Curtsy Lunges', 'Split Squat', 'Front Squat', 'Step Ups', 'Hamstring Curls', 'Leg Extension', 'Leg Press', 'Reverse Lunges']
 
 class LowerBodyExercises extends React.Component {
@@ -16,7 +14,7 @@ class LowerBodyExercises extends React.Component {
         console.log(this.props.exercises);
         return (
             <div>
-               
+            <h4>Exercises</h4>
                <ul className={this.state.class}>
                 {this.props.lowerExercises.map(ex => (
                     <li>
@@ -26,8 +24,6 @@ class LowerBodyExercises extends React.Component {
                     
                     ))}
                </ul>
-
-               <button>Save Workout</button>
 
 
             </div>

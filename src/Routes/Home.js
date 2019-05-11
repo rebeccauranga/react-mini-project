@@ -21,8 +21,8 @@ function Home() {
                         
                         </span>
                         <div class="dropdown-content">
-            <Link className={"link"}to="/routines">Saved Workouts</Link>
             <Link className={"link"} to="/workouts"> Generate A Workout</Link>
+            <Link className={"link"}to="/routines">Saved Workouts</Link>
                         </div>
                       </div>
             {/* <Link className={"link"} to="/"> Home </Link> */}
@@ -36,10 +36,9 @@ function Home() {
         <h5>Workout generator and tracker.</h5>
 
       </header>
-        {/* <div className="Components"> */}
-          {/* <h3>A fitness app designed to get you in and out of the gym faster to reach your goals sooner!</h3> */}
+       
         </div>
-    // </div>
+  
   );
 }
 

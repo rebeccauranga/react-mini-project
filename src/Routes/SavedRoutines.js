@@ -18,32 +18,27 @@ class SavedRoutines extends React.Component {
     render() {
 
         return (
-            <div className="App">
-
+        <div className="App">
             <header className="App-header">
-        <h1>EXERgen</h1>
-        <h3>Workout generator and tracker.</h3>
         <div className={"NavBar"}>
-                        <div class="dropdown">
-                        <span>
-                          <div className={"menu"}></div>
-                          <div className={"menu"}></div>
-                          <div className={"menu"}></div>
-                        
-                        </span>
-                        <div class="dropdown-content">
-            <Link className={"link"}to="/">Home</Link>
-            <Link className={"link"}to="/routines">Saved Workouts</Link>
-            <Link className={"link"} to="/workouts"> Generate A Workout</Link>
-                        </div>
-                      </div>
-            {/* <Link className={"link"} to="/"> Home </Link> */}
-          </div>
+            <div class="dropdown">
+                <span>
+                    <div className={"menu"}></div>
+                    <div className={"menu"}></div>
+                    <div className={"menu"}></div>
+                </span>
+                <div class="dropdown-content">
+                    <Link className={"link"}to="/">Home</Link>
+                    <Link className={"link"} to="/workouts"> Generate A Workout</Link>
+                </div>
+            </div>
+        </div>
+
+
+        <h2>EXERgen</h2>
+        <h5>Revisit your favorite workouts.</h5>
 
             </header>
-            <div>
-                <h1>Saved Routines</h1>
-            </div>
         </div>
         )
     }
