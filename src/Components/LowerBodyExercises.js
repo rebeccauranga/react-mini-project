@@ -1,26 +1,50 @@
 import React from 'react';
 
-
-
 const lowerBodyExercises = ['Back Squats', 'Sumo Deadlifts', 'Goblet Squats', 'Romanian Deadlifts', 'Hip Thrusts', 'Jump Squats', 'Lunges', 'Curtsy Lunges', 'Split Squat', 'Front Squat', 'Step Ups', 'Hamstring Curls', 'Leg Extension', 'Leg Press', 'Reverse Lunges']
 
+class LowerBodyExercises extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            class: 'working'
+        }
+    }
 
-function LowerBodyExercises(props) {
-    console.log(props.exercises);
-    return (
-        <div>
-           
-           <ul>
-            {props.lowerExercises.map(ex => (
-                <li>
-                {lowerBodyExercises[ex]}
-                <button>Done</button>
-                </li>
-                
-            ))}
-           </ul>
-        </div>
-    );
+    render() {
+        console.log(this.props.exercises);
+        return (
+            <div>
+            <h4>Exercises</h4>
+               <ul className={this.state.class}>
+                {this.props.lowerExercises.map(ex => (
+                    <li>
+                    {lowerBodyExercises[ex]}
+                    <button className={"done"} onClick={this._changeTextState}>Done</button>
+                    </li>
+                    
+                    ))}
+               </ul>
+
+
+            </div>
+        );
+    }
+
+
+    _changeTextState = () => {
+        this.setState({
+            class: 'completed'
+        });
+    }
+
+
+
+
+
 }
+
+
+
+
         
 export default LowerBodyExercises;

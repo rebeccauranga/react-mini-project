@@ -7,7 +7,11 @@ function UpperBodyExercises(props) {
         <div>
              <ul>
             {props.upperExercises.map(ex => (
-                <li>{upperBodyExercises[ex]}</li>
+                <li>{upperBodyExercises[ex]}
+
+                <button className={"done"}>Done</button>
+                </li>
+
             ))}
            </ul>
         </div>

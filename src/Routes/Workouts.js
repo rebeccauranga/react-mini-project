@@ -16,16 +16,30 @@ function Workouts() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>EXERgen</h1>
-        <h3>Workout generator and tracker.</h3>
-        <h4><Link to="/routines">Saved Routines</Link></h4>
-        <h4><Link to="/"> Home Page</Link></h4>
-        <h4><Link to="/workouts"> Workouts</Link></h4>
+        <div className={"NavBar"}>
+            <div class="dropdown">
+                <span>
+                  <div className={"menu"}></div>
+                  <div className={"menu"}></div>
+                  <div className={"menu"}></div>
+                </span>
+              <div class="dropdown-content">
+                <Link className={"link"}to="/">Home</Link>
+                <Link className={"link"}to="/routines">Saved Workouts</Link>
+              </div>
+            </div>
+        </div>
 
-      </header>
+
+        <h2>EXERgen</h2>
+        <h5>Generate a workout below.</h5>
+
+
         <div className="Components">
           <WorkoutTypes />
+          <a href="https://ctt.ac/8wRC0" target="blank"> Share your workout! </a>
         </div>
+      </header>
     </div>
   );
 }

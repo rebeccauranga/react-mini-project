@@ -22,15 +22,21 @@ class WorkoutTypes extends React.Component {
     render() {
         return(
             <div>
-                <h4>Exercises</h4>
-                    <button onClick={this._wrapperFunction}> Lower Body </button>
+
+                <div className={"workout"}>
+                    <button onClick={this._wrapperFunctionLower}> Lower Body </button>
+                    <button onClick={this._wrapperFunctionUpper}> Upper Body </button>
+                    <button onClick={this._wrapperFunctionCardio}> Cardio </button>
+                    
+                </div>
+                    <div className={"exAndSets"}>
+                    
                         <LowerBodyExercises lowerExercises={this.state.lowerExercises} />
-                    <button onClick={this._updateUpperExercises}> Upper Body </button>
+                        <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/>
                         <UpperBodyExercises upperExercises={this.state.upperExercises}/>
-                    <button onClick={this._updateCardioExercises}> Cardio </button>
                         <CardioExercises cardioExercises={this.state.cardio}/> 
-                        
-                <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/>
+                            
+                    </div>
             </div>
         );
     }
@@ -101,9 +107,19 @@ class WorkoutTypes extends React.Component {
         });
     }
 
-    _wrapperFunction = () => {
+    _wrapperFunctionLower = () => {
         this._generateSets();
         this._updateLowerExercises();
+    }
+
+    _wrapperFunctionUpper = () => {
+        this._generateSets();
+        this._updateUpperExercises();
+    }
+
+    _wrapperFunctionCardio = () => {
+        this._generateSets();
+        this._updateCardioExercises();
     }
 
 

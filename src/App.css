@@ -1,8 +1,36 @@
 .App {
   text-align: left;
-  background-color: #303030;
-  /* line-height: 2px; */
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
   display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'TeX Gyre Adventor';
+  color: white;
+}
+
+.NavBar {
+  font-size: 14px;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+.link, a {
+  display: flex;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.link:hover, a:hover {
+  color: rgb(237, 230, 90);
+}
+
+h1 {
+  letter-spacing: 2px;
+  font-size: 54px;
+  margin: 0;
+  z-index: 1;
 }
 
 
@@ -19,29 +47,34 @@
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(42, 244, 240);
+  color: rgb(255, 255, 255);
 }
 
 .Components {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 50px;
-  color: rgb(175, 252, 68);
+  margin-bottom: 50px;
+  color: rgb(255, 255, 255);
   width: 100%;
+  font-size: 12px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.exAndSets {
+  display: flex;
+}
+
 button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #ffffff;
-  border: none;
-  color: rgb(0, 0, 0);
+  background-color: #000000;
+  border: 1px solid white;
+  color: rgb(255, 255, 255);
   text-align: center;
   padding: 2px;
   width: 100px;
@@ -49,17 +82,73 @@ button {
   cursor: pointer;
   height: 25px;
   margin: 10px;
+  font-family: 'TeX Gyre Adventor';
+  text-transform: uppercase;
 }
 
 button:hover {
-  background-color: rgb(255, 35, 149); /* Green */
-  color: white;
+  background-color: rgb(237, 230, 90);/* Green */
+  color: rgb(0, 0, 0);
+  border: none;
 }
+
 
 ul {
   list-style: none;
-  text-align: center;
+  text-align: left;
 }
+
+.completed {
+  text-decoration: line-through;
+}
+
+.workout {
+  display: flex;
+}
+
+.done {
+  width: 40px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.shape {
+  width: 100%;
+  height: 20px;
+  background-color: rgb(33, 33, 33);
+  transform:rotate(33deg);
+  margin: 6px 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.menu {
+  width: 25px;
+  height: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 4px 0;
+  margin-left:
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
 
 @keyframes App-logo-spin {
   from {
