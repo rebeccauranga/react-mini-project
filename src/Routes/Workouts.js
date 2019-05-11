@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
-import Timer from './Timer';
-import WorkoutTypes from './WorkoutTypes';
-import SetsAndReps from './SetsAndReps';
+import '../App.css';
+import Timer from '../Components/Timer';
+import WorkoutTypes from '../Components/WorkoutTypes';
+import SetsAndReps from '../Components/SetsAndReps';
 import SavedRoutines from './SavedRoutines';
 import {
     Link,

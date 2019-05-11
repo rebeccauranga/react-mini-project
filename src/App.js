@@ -1,11 +1,8 @@
 import React from 'react';
 import './App.css';
-import Home from './Home'
-import Timer from './Timer';
-import Workouts from './Workouts'
-import WorkoutTypes from './WorkoutTypes';
-import SetsAndReps from './SetsAndReps';
-import SavedRoutines from './SavedRoutines';
+import Home from './Routes/Home';
+import Workouts from './Routes/Workouts';
+import SavedRoutines from './Routes/SavedRoutines';
 import {
     Link,
     Route,
