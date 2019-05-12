@@ -35,6 +35,7 @@ function Workouts() {
         <h5>Generate a workout below.</h5>
 
 
+
         <div className="Components">
           <WorkoutTypes />
           <a href="https://ctt.ac/8wRC0" target="blank"> Share your workout! </a>

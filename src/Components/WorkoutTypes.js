@@ -5,7 +5,6 @@ import UpperBodyExercises from './UpperBodyExercises';
 import CardioExercises from './CardioExercises';
 
 
-
 class WorkoutTypes extends React.Component {
     
     constructor(props) {
@@ -15,7 +14,7 @@ class WorkoutTypes extends React.Component {
             upperExercises: [],
             cardio: [],
             sets: '',
-            reps: ''
+            reps: '',
         }
     }
     
@@ -32,7 +31,7 @@ class WorkoutTypes extends React.Component {
                     <div className={"exAndSets"}>
                     
                         <LowerBodyExercises lowerExercises={this.state.lowerExercises} />
-                        <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/>
+                        {/* <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/> */}
                         <UpperBodyExercises upperExercises={this.state.upperExercises}/>
                         <CardioExercises cardioExercises={this.state.cardio}/> 
                             

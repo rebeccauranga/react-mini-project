@@ -5,6 +5,8 @@ const upperBodyExercises = ['Barbell Rows', 'Bicep Curls', 'Tricep Dips', 'Lat P
 function UpperBodyExercises(props) {
     return (
         <div>
+
+            
              <ul>
             {props.upperExercises.map(ex => (
                 <li>{upperBodyExercises[ex]}
