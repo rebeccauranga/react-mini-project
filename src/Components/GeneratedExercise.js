@@ -12,9 +12,7 @@ class GeneratedExercise extends React.Component {
           finished: this.props.completed,
         }
     }
-
     render() {
-
         return (
             <div>
                <ul>
@@ -42,11 +40,14 @@ class GeneratedExercise extends React.Component {
                 }
                </ul>
 
+
             </div>
         );
     }
 
+
 }
+
 
 
 
