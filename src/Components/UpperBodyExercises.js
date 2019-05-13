@@ -20,12 +20,5 @@ function UpperBodyExercises(props) {
     );
 }
 
-// _generateUpperBodyWorkout = () => {
-//     const rand = upperBodyExercises[Math.floor(Math.random() * upperBodyExercises.length)];
-//     console.log(rand)
-//     this.setState({
-//         upperBodyWorkout: rand
-//     });
-// }
 
 export default UpperBodyExercises;

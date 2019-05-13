@@ -25,7 +25,6 @@ function Home() {
             <Link className={"link"}to="/routines">Saved Workouts</Link>
                         </div>
                       </div>
-            {/* <Link className={"link"} to="/"> Home </Link> */}
           </div>
 
     <div className={"shape"}></div>
