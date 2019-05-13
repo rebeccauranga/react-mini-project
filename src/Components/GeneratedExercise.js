@@ -9,20 +9,20 @@ class GeneratedExercise extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            class: 'working'
+          finished: this.props.completed
         }
     }
 
     render() {
-        console.log(this.props.exercises);
+
         return (
             <div>
             <h4>Exercises</h4>
-               <ul className={this.state.class}>
+               <ul>
                 {(this.props.type==='l') ? 
                     this.props.lowerExercises.map(ex => (
                     <li>
-                    <Exercise name={lowerBodyExercises[ex]} />
+                    <Exercise name={lowerBodyExercises[ex]} completed={this.state.finished} />
                     {/* {lowerBodyExercises[ex]} */}
                     {/* <button className={"done"} onClick={this._changeTextState}>Done</button> */}
                     </li>))
@@ -30,7 +30,7 @@ class GeneratedExercise extends React.Component {
                     (this.props.type==='u') ? 
                     this.props.upperExercises.map(ex => (
                     <li>
-                     <Exercise name={upperBodyExercises[ex]} />
+                     <Exercise name={upperBodyExercises[ex]} completed={this.state.finished} />
                     {/* <button className={"done"} onClick={this._changeTextState}>Done</button> */}
                     </li>
                     ))
@@ -38,7 +38,7 @@ class GeneratedExercise extends React.Component {
                     (this.props.type==='c')?
                     this.props.cardioExercises.map(ex => (
                     <li>
-                     <Exercise name={cardio[ex]} />
+                     <Exercise name={cardio[ex]} completed={this.state.finished} />
                     </li>
                     ))
                     :
@@ -52,11 +52,11 @@ class GeneratedExercise extends React.Component {
     }
 
 
-    _changeTextState = () => {
-        this.setState({
-            class: 'completed'
-        });
-    }
+    // _changeTextState = () => {
+    //     this.setState({
+    //         class: 'completed'
+    //     });
+    // }
 
 
 

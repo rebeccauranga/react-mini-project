@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
 class Exercise extends Component {
-    state = { 
-        completed: false
+    constructor(props) {
+        super(props);
+        this.state = { 
+            done: this.props.completed
+        }
     }
-    render (props) {
-        const classVis = this.state.completed ? 'completed' : 'workout'
+    render () {
+        console.log(this.state.done)
+        const classVis = this.state.done ? 'completed' : 'workout'
         return (
             <div>
                 <div className={`${classVis}`}>
@@ -17,7 +21,7 @@ class Exercise extends Component {
     }
     _changeTextState = () => {
         this.setState({
-            completed: !this.state.completed
+            done: !this.state.done
         });
     }
 
