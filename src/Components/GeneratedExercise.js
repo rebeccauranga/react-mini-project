@@ -21,7 +21,7 @@ class GeneratedExercise extends React.Component {
                <ul>
                 {(this.props.type==='l') ? 
                     this.props.lowerExercises.map(ex => (
-                    <li>
+                    <li key={lowerBodyExercises[ex]}>
                     <Exercise name={lowerBodyExercises[ex]} completed={this.state.finished} />
                     {/* {lowerBodyExercises[ex]} */}
                     {/* <button className={"done"} onClick={this._changeTextState}>Done</button> */}
@@ -29,7 +29,7 @@ class GeneratedExercise extends React.Component {
                     : 
                     (this.props.type==='u') ? 
                     this.props.upperExercises.map(ex => (
-                    <li>
+                    <li key={upperBodyExercises[ex]}>
                      <Exercise name={upperBodyExercises[ex]} completed={this.state.finished} />
                     {/* <button className={"done"} onClick={this._changeTextState}>Done</button> */}
                     </li>
@@ -37,7 +37,7 @@ class GeneratedExercise extends React.Component {
                     :
                     (this.props.type==='c')?
                     this.props.cardioExercises.map(ex => (
-                    <li>
+                    <li key={cardio[ex]}>
                      <Exercise name={cardio[ex]} completed={this.state.finished} />
                     </li>
                     ))
