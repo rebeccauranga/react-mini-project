@@ -1,5 +1,6 @@
 import React from 'react';
 import Exercise from './Exercise'
+import SaveButton from './SaveButton'
 
 const lowerBodyExercises = ['Back Squats', 'Sumo Deadlifts', 'Goblet Squats', 'Romanian Deadlifts', 'Hip Thrusts', 'Jump Squats', 'Lunges', 'Curtsy Lunges', 'Split Squat', 'Front Squat', 'Step Ups', 'Hamstring Curls', 'Leg Extension', 'Leg Press', 'Reverse Lunges']
 const upperBodyExercises = ['Barbell Rows', 'Bicep Curls', 'Tricep Dips', 'Lat Pulldowns', 'Shoulder Press', 'Front Raises', 'Side Raises', 'Reverse Flys', 'Chest Press', 'Dumbbell Chest Press', 'Crazy 8s (Biceps)', 'Pull Ups', 'Push Ups', 'Arnold Presses', 'Face Plants']
@@ -39,8 +40,19 @@ class GeneratedExercise extends React.Component {
                     <div></div>
                 }
                </ul>
+               {(this.props.type==='l') ?
+               <SaveButton exercises ={this.props.lowerExercises} type={this.props.type}/>
+               :
+               (this.props.type==='u') ?
+               <SaveButton exercises ={this.props.upperExercises} type={this.props.type}/>
+               :
+               (this.props.type==='c') ?
+               <SaveButton exercises ={this.props.cardioExercises} type={this.props.type}/>
+               :
+               <div></div> 
+            }
 
-
+                
             </div>
         );
     }

@@ -1,10 +1,8 @@
 import React from 'react';
 import SetsAndReps from './SetsAndReps';
-import LowerBodyExercises from './LowerBodyExercises';
-import UpperBodyExercises from './UpperBodyExercises';
-import CardioExercises from './CardioExercises';
 import GeneratedExercise from './GeneratedExercise'
 import Time from './Time'
+import SaveButton from './SaveButton'
 
 
 class WorkoutTypes extends React.Component {
@@ -38,18 +36,30 @@ class WorkoutTypes extends React.Component {
                     <div className={"exAndSets"}>
                     {this.state.title}
                         <GeneratedExercise type={this.state.selected} lowerExercises={this.state.lowerExercises} upperExercises={this.state.upperExercises} cardioExercises={this.state.cardio} completed={this.state.completed}/>
-
                         <div>
                             {
                             (this.state.selected == '') ?
                             <div></div>
                             : 
                             (this.state.selected == 'c') ? 
-                            <Time time={this.state.time} cardioExercises={this.state.cardio}/>
+                            <div>
+                                <Time time={this.state.time} cardioExercises={this.state.cardio}/>
+                            </div>
                             : 
-                            (this.state.selected == 'l' || 'u') ? 
-                            <SetsAndReps setNum={this.state.sets} repNum={this.state.reps} type={this.state.selected}/>
-                            : <div></div>
+                            (this.state.selected == 'l') ? 
+                            <div> 
+                                <SetsAndReps setNum={this.state.sets} repNum={this.state.reps} type={this.state.selected}/>
+                                {/* <SaveButton exercises ={this.state.lowerExercises}/> */}
+
+                            {/* <SaveButton /> */}
+                            </div>
+                            : 
+                            (this.state.selected == 'u') ? 
+                            <div> 
+                                <SetsAndReps setNum={this.state.sets} repNum={this.state.reps} type={this.state.selected}/>
+                                {/* <SaveButton exercises ={this.state.upperExercises}/> */}
+                            </div>
+                            :<div></div>
                         }
                         </div>
 
