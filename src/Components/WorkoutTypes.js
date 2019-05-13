@@ -16,7 +16,8 @@ class WorkoutTypes extends React.Component {
             cardio: [],
             sets: '',
             reps: '',
-            selected: ''
+            selected: '',
+            completed: false
         }
     }
     
@@ -31,7 +32,7 @@ class WorkoutTypes extends React.Component {
                     
                 </div>
                     <div className={"exAndSets"}>
-                        <GeneratedExercise type={this.state.selected} lowerExercises={this.state.lowerExercises} upperExercises={this.state.upperExercises} cardioExercises={this.state.cardio} />
+                        <GeneratedExercise type={this.state.selected} lowerExercises={this.state.lowerExercises} upperExercises={this.state.upperExercises} cardioExercises={this.state.cardio} completed={this.state.completed}/>
                         {/* <LowerBodyExercises lowerExercises={this.state.lowerExercises} /> */}
                         <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/>
                         {/* <UpperBodyExercises upperExercises={this.state.upperExercises}/> */}
@@ -53,7 +54,6 @@ class WorkoutTypes extends React.Component {
                 exercisesGen.push(rand); 
             } 
         }
-        console.log(exercisesGen);
 
         this.setState({
             lowerExercises: exercisesGen,
@@ -71,7 +71,6 @@ class WorkoutTypes extends React.Component {
                 exercisesGen.push(rand); 
             } 
         }
-        console.log(exercisesGen);
 
         this.setState({
             upperExercises: exercisesGen,
@@ -90,7 +89,6 @@ class WorkoutTypes extends React.Component {
                 exercisesGen.push(rand); 
             } 
         }
-        console.log(exercisesGen);
 
         this.setState({
             cardio: exercisesGen
@@ -103,29 +101,39 @@ class WorkoutTypes extends React.Component {
         const reps = [5, 6, 8, 10, 12, 15, 20];
         const rand = sets[Math.floor(Math.random() * sets.length)];
         const rand2 = reps[Math.floor(Math.random() * reps.length)];
-        console.log(rand);
         this.setState({
             sets: rand,
             reps: rand2,
             selected: 'c'
         });
     }
+    _resetWorkout = () => {
+        this.setState({
+            completed: false
+        })
+    }
 
     _wrapperFunctionLower = () => {
+        this._resetWorkout();
         this._generateSets();
         this._updateLowerExercises();
+        console.log(this.state.completed)
     }
 
     _wrapperFunctionUpper = () => {
+        this._resetWorkout();
         this._generateSets();
         this._updateUpperExercises();
+        console.log(this.state.completed)
     }
 
     _wrapperFunctionCardio = () => {
+        this._resetWorkout();
         this._generateSets();
         this._updateCardioExercises();
-    }
+        console.log(this.state.completed)
 
+    }
 
 }
 
