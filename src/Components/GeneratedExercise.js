@@ -12,9 +12,7 @@ class GeneratedExercise extends React.Component {
           finished: this.props.completed
         }
     }
-
     render() {
-
         return (
             <div>
             <h4>Exercises</h4>
@@ -23,15 +21,12 @@ class GeneratedExercise extends React.Component {
                     this.props.lowerExercises.map(ex => (
                     <li key={lowerBodyExercises[ex]}>
                     <Exercise name={lowerBodyExercises[ex]} completed={this.state.finished} />
-                    {/* {lowerBodyExercises[ex]} */}
-                    {/* <button className={"done"} onClick={this._changeTextState}>Done</button> */}
                     </li>))
                     : 
                     (this.props.type==='u') ? 
                     this.props.upperExercises.map(ex => (
                     <li key={upperBodyExercises[ex]}>
                      <Exercise name={upperBodyExercises[ex]} completed={this.state.finished} />
-                    {/* <button className={"done"} onClick={this._changeTextState}>Done</button> */}
                     </li>
                     ))
                     :
@@ -45,24 +40,11 @@ class GeneratedExercise extends React.Component {
                     <div></div>
                 }
                </ul>
-
-
             </div>
         );
     }
-
-
-    // _changeTextState = () => {
-    //     this.setState({
-    //         class: 'completed'
-    //     });
-    // }
-
-
-
-
-
 }
+
 
 
 
