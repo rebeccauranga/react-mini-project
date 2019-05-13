@@ -6,7 +6,6 @@ import CardioExercises from './CardioExercises';
 import GeneratedExercise from './GeneratedExercise'
 
 
-
 class WorkoutTypes extends React.Component {
     
     constructor(props) {
