@@ -4,6 +4,7 @@ import LowerBodyExercises from './LowerBodyExercises';
 import UpperBodyExercises from './UpperBodyExercises';
 import CardioExercises from './CardioExercises';
 import GeneratedExercise from './GeneratedExercise'
+import Time from './Time'
 
 
 class WorkoutTypes extends React.Component {
@@ -16,12 +17,15 @@ class WorkoutTypes extends React.Component {
             cardio: [],
             sets: '',
             reps: '',
+            time: '',
             selected: '',
+            title: '',
             completed: false
         }
     }
     
     render() {
+        console.log(this.state.selected);
         return(
             <div>
 
@@ -32,11 +36,23 @@ class WorkoutTypes extends React.Component {
                     
                 </div>
                     <div className={"exAndSets"}>
+                    {this.state.title}
                         <GeneratedExercise type={this.state.selected} lowerExercises={this.state.lowerExercises} upperExercises={this.state.upperExercises} cardioExercises={this.state.cardio} completed={this.state.completed}/>
-                        {/* <LowerBodyExercises lowerExercises={this.state.lowerExercises} /> */}
-                        <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/>
-                        {/* <UpperBodyExercises upperExercises={this.state.upperExercises}/> */}
-                        {/* <CardioExercises cardioExercises={this.state.cardio}/>  */}
+
+                        <div>
+                            {
+                            (this.state.selected == '') ?
+                            <div></div>
+                            : 
+                            (this.state.selected == 'c') ? 
+                            <Time time={this.state.time} cardioExercises={this.state.cardio}/>
+                            : 
+                            (this.state.selected == 'l' || 'u') ? 
+                            <SetsAndReps setNum={this.state.sets} repNum={this.state.reps} type={this.state.selected}/>
+                            : <div></div>
+                        }
+                        </div>
+
                             
                     </div>
             </div>
@@ -57,7 +73,8 @@ class WorkoutTypes extends React.Component {
 
         this.setState({
             lowerExercises: exercisesGen,
-            selected: 'l'
+            selected: 'l',
+            title: 'Lower Body Exercises'
         });
        localStorage.setItem('lowerExercises', exercisesGen)
     }
@@ -75,11 +92,11 @@ class WorkoutTypes extends React.Component {
 
         this.setState({
             upperExercises: exercisesGen,
-            selected: 'u'
+            selected: 'u',
+            title: 'Upper Body Exercises'
         });
     }
 
-    // simplify function because we only need one cardio exercise
     _updateCardioExercises = () => {
         const exercisesGen = []
         const length = 15;
@@ -92,7 +109,9 @@ class WorkoutTypes extends React.Component {
         }
 
         this.setState({
-            cardio: exercisesGen
+            cardio: exercisesGen,
+            selected: 'c',
+            title: ''
         });
     }
 
@@ -108,6 +127,17 @@ class WorkoutTypes extends React.Component {
             selected: 'c'
         });
     }
+
+    _generateTime = () => {
+        const time = [15, 20, 30, 45, 60];
+        const rand = time[Math.floor(Math.random() * time.length)];
+        console.log(rand);
+        this.setState({
+            time: rand
+        });
+    }
+
+
     _resetWorkout = () => {
         this.setState({
             completed: false
@@ -115,25 +145,21 @@ class WorkoutTypes extends React.Component {
     }
 
     _wrapperFunctionLower = () => {
-        this._resetWorkout();
         this._generateSets();
         this._updateLowerExercises();
         console.log(this.state.completed)
     }
 
     _wrapperFunctionUpper = () => {
-        this._resetWorkout();
         this._generateSets();
         this._updateUpperExercises();
         console.log(this.state.completed)
     }
 
     _wrapperFunctionCardio = () => {
-        this._resetWorkout();
-        this._generateSets();
+        this._generateTime();
         this._updateCardioExercises();
         console.log(this.state.completed)
-
     }
 
 }
