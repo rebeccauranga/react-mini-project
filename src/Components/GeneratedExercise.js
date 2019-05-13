@@ -40,6 +40,7 @@ class GeneratedExercise extends React.Component {
                     <div></div>
                 }
                </ul>
+               
             </div>
         );
     }
