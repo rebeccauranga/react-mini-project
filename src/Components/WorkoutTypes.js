@@ -19,11 +19,13 @@ class WorkoutTypes extends React.Component {
             reps: '',
             time: '',
             selected: '',
+            title: '',
             completed: false
         }
     }
     
     render() {
+        console.log(this.state.selected);
         return(
             <div>
 
@@ -34,10 +36,23 @@ class WorkoutTypes extends React.Component {
                     
                 </div>
                     <div className={"exAndSets"}>
+                    {this.state.title}
                         <GeneratedExercise type={this.state.selected} lowerExercises={this.state.lowerExercises} upperExercises={this.state.upperExercises} cardioExercises={this.state.cardio} completed={this.state.completed}/>
 
-                        <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/>
-                        <Time time={this.state.time} cardioExercises={this.state.cardio}/>
+                        <div>
+                            {
+                            (this.state.selected == '') ?
+                            <div></div>
+                            : 
+                            (this.state.selected == 'c') ? 
+                            <Time time={this.state.time} cardioExercises={this.state.cardio}/>
+                            : 
+                            (this.state.selected == 'l' || 'u') ? 
+                            <SetsAndReps setNum={this.state.sets} repNum={this.state.reps} type={this.state.selected}/>
+                            : <div></div>
+                        }
+                        </div>
+
                             
                     </div>
             </div>
@@ -58,7 +73,8 @@ class WorkoutTypes extends React.Component {
 
         this.setState({
             lowerExercises: exercisesGen,
-            selected: 'l'
+            selected: 'l',
+            title: 'Lower Body Exercises'
         });
     }
 
@@ -75,7 +91,8 @@ class WorkoutTypes extends React.Component {
 
         this.setState({
             upperExercises: exercisesGen,
-            selected: 'u'
+            selected: 'u',
+            title: 'Upper Body Exercises'
         });
     }
 
@@ -92,7 +109,8 @@ class WorkoutTypes extends React.Component {
 
         this.setState({
             cardio: exercisesGen,
-            selected: 'c'
+            selected: 'c',
+            title: ''
         });
     }
 

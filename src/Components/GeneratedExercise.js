@@ -9,7 +9,7 @@ class GeneratedExercise extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          finished: this.props.completed
+          finished: this.props.completed,
         }
     }
 
@@ -17,11 +17,10 @@ class GeneratedExercise extends React.Component {
 
         return (
             <div>
-            <h4>Exercises</h4>
                <ul>
                 {(this.props.type==='l') ? 
                     this.props.lowerExercises.map(ex => (
-                    <li key={lowerBodyExercises[ex]}>
+                        <li key={lowerBodyExercises[ex]}>
                     <Exercise name={lowerBodyExercises[ex]} completed={this.state.finished} />
                     </li>))
                     : 
@@ -35,7 +34,7 @@ class GeneratedExercise extends React.Component {
                     (this.props.type==='c')?
                     this.props.cardioExercises.map(ex => (
                     <li key={cardio[ex]}>
-                     <Exercise name={cardio[ex]} completed={this.state.finished} />
+                     {/* <Exercise name={cardio[ex]} completed={this.state.finished} /> */}
                     </li>
                     ))
                     :
