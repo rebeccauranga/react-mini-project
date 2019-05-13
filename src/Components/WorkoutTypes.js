@@ -3,6 +3,7 @@ import SetsAndReps from './SetsAndReps';
 import LowerBodyExercises from './LowerBodyExercises';
 import UpperBodyExercises from './UpperBodyExercises';
 import CardioExercises from './CardioExercises';
+import GeneratedExercise from './GeneratedExercise'
 
 
 class WorkoutTypes extends React.Component {
@@ -15,6 +16,7 @@ class WorkoutTypes extends React.Component {
             cardio: [],
             sets: '',
             reps: '',
+            selected: ''
         }
     }
     
@@ -29,11 +31,11 @@ class WorkoutTypes extends React.Component {
                     
                 </div>
                     <div className={"exAndSets"}>
-                    
-                        <LowerBodyExercises lowerExercises={this.state.lowerExercises} />
-                        {/* <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/> */}
-                        <UpperBodyExercises upperExercises={this.state.upperExercises}/>
-                        <CardioExercises cardioExercises={this.state.cardio}/> 
+                        <GeneratedExercise type={this.state.selected} lowerExercises={this.state.lowerExercises} upperExercises={this.state.upperExercises} cardioExercises={this.state.cardio} />
+                        {/* <LowerBodyExercises lowerExercises={this.state.lowerExercises} /> */}
+                        <SetsAndReps setNum={this.state.sets} repNum={this.state.reps}/>
+                        {/* <UpperBodyExercises upperExercises={this.state.upperExercises}/> */}
+                        {/* <CardioExercises cardioExercises={this.state.cardio}/>  */}
                             
                     </div>
             </div>
@@ -54,7 +56,8 @@ class WorkoutTypes extends React.Component {
         console.log(exercisesGen);
 
         this.setState({
-            lowerExercises: exercisesGen
+            lowerExercises: exercisesGen,
+            selected: 'l'
         });
     }
 
@@ -71,7 +74,8 @@ class WorkoutTypes extends React.Component {
         console.log(exercisesGen);
 
         this.setState({
-            upperExercises: exercisesGen
+            upperExercises: exercisesGen,
+            selected: 'u'
         });
     }
 
@@ -102,7 +106,8 @@ class WorkoutTypes extends React.Component {
         console.log(rand);
         this.setState({
             sets: rand,
-            reps: rand2
+            reps: rand2,
+            selected: 'c'
         });
     }
 
