@@ -1,4 +1,5 @@
 import React from 'react';
+import Exercise from './Exercise'
 
 const lowerBodyExercises = ['Back Squats', 'Sumo Deadlifts', 'Goblet Squats', 'Romanian Deadlifts', 'Hip Thrusts', 'Jump Squats', 'Lunges', 'Curtsy Lunges', 'Split Squat', 'Front Squat', 'Step Ups', 'Hamstring Curls', 'Leg Extension', 'Leg Press', 'Reverse Lunges']
 const upperBodyExercises = ['Barbell Rows', 'Bicep Curls', 'Tricep Dips', 'Lat Pulldowns', 'Shoulder Press', 'Front Raises', 'Side Raises', 'Reverse Flys', 'Chest Press', 'Dumbbell Chest Press', 'Crazy 8s (Biceps)', 'Pull Ups', 'Push Ups', 'Arnold Presses', 'Face Plants']
@@ -21,24 +22,27 @@ class GeneratedExercise extends React.Component {
                 {(this.props.type==='l') ? 
                     this.props.lowerExercises.map(ex => (
                     <li>
-                    {lowerBodyExercises[ex]}
-                    <button className={"done"} onClick={this._changeTextState}>Done</button>
+                    <Exercise name={lowerBodyExercises[ex]} />
+                    {/* {lowerBodyExercises[ex]} */}
+                    {/* <button className={"done"} onClick={this._changeTextState}>Done</button> */}
                     </li>))
                     : 
                     (this.props.type==='u') ? 
                     this.props.upperExercises.map(ex => (
                     <li>
-                    {upperBodyExercises[ex]}
-                    <button className={"done"} onClick={this._changeTextState}>Done</button>
+                     <Exercise name={upperBodyExercises[ex]} />
+                    {/* <button className={"done"} onClick={this._changeTextState}>Done</button> */}
                     </li>
                     ))
                     :
                     (this.props.type==='c')?
                     this.props.cardioExercises.map(ex => (
-                        <li>{cardio[ex]}</li>
+                    <li>
+                     <Exercise name={cardio[ex]} />
+                    </li>
                     ))
                     :
-                    <div>doh</div>
+                    <div></div>
                 }
                </ul>
 
