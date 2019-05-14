@@ -39,7 +39,7 @@ class SavedRoutines extends React.Component {
         <h2>EXERgen</h2>
         <h5>Revisit your favorite workouts.</h5>
         <div>
-
+           
         <Table striped bordered hover>
                     <thead>
                         <tr>

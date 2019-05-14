@@ -2,6 +2,8 @@ import React from 'react';
 import '../App.css'; 
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
+import uuidv1 from 'uuid/v1';
+
 
 class Log extends React.Component {
 
@@ -114,11 +116,13 @@ class Log extends React.Component {
                             <th>Reps</th>
                         </tr>
                     </thead>
+                    <tbody>
                         <tr>
                             <ExerciseNames />
                             <NumberOfSets />
                             <NumberOfReps />
                         </tr>
+                    </tbody>
                         
             </Table>
 
@@ -146,7 +150,7 @@ function ExerciseNames() {
         <td>{
             (localArr) ? 
                 localArr.map((ex) => (
-                    <div>
+                    <div key={uuidv1()}>
                         {ex}
                     </div>
                 ))
@@ -163,7 +167,7 @@ function NumberOfSets() {
         <td>{
             (localArrSets) ? 
                 localArrSets.map(num => (
-                    <div>{num}</div>
+                    <div key={uuidv1()}>{num}</div>
                 ))
                 : 
                 <div></div>
@@ -177,7 +181,7 @@ function NumberOfReps() {
         <td>{
             (localArrReps) ? 
                 localArrReps.map(num => (
-                    <div>{num}</div>
+                    <div key={uuidv1()}>{num}</div>
                 ))
                 : 
                 <div></div>
