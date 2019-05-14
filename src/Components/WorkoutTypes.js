@@ -1,8 +1,5 @@
 import React from 'react';
 import SetsAndReps from './SetsAndReps';
-import LowerBodyExercises from './LowerBodyExercises';
-import UpperBodyExercises from './UpperBodyExercises';
-import CardioExercises from './CardioExercises';
 import GeneratedExercise from './GeneratedExercise'
 import Time from './Time'
 
@@ -41,13 +38,13 @@ class WorkoutTypes extends React.Component {
 
                         <div>
                             {
-                            (this.state.selected == '') ?
+                            (this.state.selected === '') ?
                             <div></div>
                             : 
-                            (this.state.selected == 'c') ? 
+                            (this.state.selected === 'c') ? 
                             <Time time={this.state.time} cardioExercises={this.state.cardio}/>
                             : 
-                            (this.state.selected == 'l' || 'u') ? 
+                            (this.state.selected === 'l' || 'u') ? 
                             <SetsAndReps setNum={this.state.sets} repNum={this.state.reps} type={this.state.selected}/>
                             : <div></div>
                         }
