@@ -41,11 +41,10 @@ class SavedRoutines extends React.Component {
         <div>
             <UpperSaved upper={this.props.upperRoutines} />
         </div>
-        <div>
+        {/* <div>
             <CardioSaved cardio={this.props.cardioRoutines} />
-        </div> 
+        </div>  */}
 
-         <Log value={this.props.value} />
             </header>
         </div>
         )

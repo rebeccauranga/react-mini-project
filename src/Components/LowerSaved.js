@@ -1,4 +1,6 @@
 import React from 'react';
+import uuidv1 from 'uuid/v1';
+
 
 
 
@@ -13,20 +15,23 @@ class LowerSaved extends React.Component {
     render() {
         
         const lowerBodyExercises = ['Back Squats', 'Sumo Deadlifts', 'Goblet Squats', 'Romanian Deadlifts', 'Hip Thrusts', 'Jump Squats', 'Lunges', 'Curtsy Lunges', 'Split Squat', 'Front Squat', 'Step Ups', 'Hamstring Curls', 'Leg Extension', 'Leg Press', 'Reverse Lunges','Barbell Rows', 'Bicep Curls', 'Tricep Dips', 'Lat Pulldowns', 'Shoulder Press', 'Front Raises', 'Side Raises', 'Reverse Flys', 'Chest Press', 'Dumbbell Chest Press', 'Crazy 8s (Biceps)', 'Pull Ups', 'Push Ups', 'Arnold Presses', 'Face Plants','Sprints', 'Treadmill', 'StairMaster', 'Elliptical', 'Bike', 'Bike Sprints', 'Jump Squats', 'Burpees', 'Mountain Climbers', 'Skater Jumps', '180 Jump Squats', 'Elliptical Sprints', 'Frog Jumps', 'Swimming', 'Hiking'];
-        const lowerWorkouts = localStorage.getItem('lowerExercises').split(',')
-        const lowerarray = []
-        const lowerparsed =  lowerWorkouts.forEach(num =>{
-             lowerarray.push(parseInt(num))
-        })
-        console.log(lowerarray)
-        const mappedArray = lowerarray.map (w => (
-            <li key={w}>{lowerBodyExercises[w]}</li>
-                    ))
-        console.log(mappedArray)
+        const lowerWorkouts = JSON.parse(localStorage.getItem('savedLowerExercises'));
+        const lowerSets = JSON.parse(localStorage.getItem('savedLowerSets'));
+        const lowerReps = JSON.parse(localStorage.getItem('savedUpperReps'));
+    
         return (
             <div>
                 <ul>
-                    {mappedArray}
+                    {lowerWorkouts.map (w => (
+                        <li key={uuidv1()}>{w}</li>
+                     ))}
+                    {lowerSets.map(s=>(
+                            <li key={uuidv1()}>Sets: {s}</li>
+                    ))}
+                    {lowerReps.map(r=>(
+                            <li key={uuidv1()}>Sets: {r}</li>
+                        ))}
+            
                 </ul>
             </div>
         )
