@@ -39,7 +39,6 @@ class SavedRoutines extends React.Component {
 
 
         <h2>EXERgen</h2>
-        <h5>Revisit your favorite workouts.</h5>
         <ul>
             {array.map(w =>(
                 <li key={lowerBodyExercises[w]}>{lowerBodyExercises[w]}</li>
