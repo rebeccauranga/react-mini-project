@@ -1,16 +1,7 @@
 import React from 'react';
 import '../App.css';
-import Timer from '../Components/Timer';
 import WorkoutTypes from '../Components/WorkoutTypes';
-import SetsAndReps from '../Components/SetsAndReps';
-import SavedRoutines from './SavedRoutines';
-import {
-    Link,
-    Route,
-    Switch,
-    Redirect,
-    withRouter
-} from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
 
 class Workouts extends React.Component {
   constructor(props) {
@@ -33,6 +24,7 @@ class Workouts extends React.Component {
                 <div className="dropdown-content">
                   <Link className={"link"}to="/">Home</Link>
                   <Link className={"link"}to="/routines">Saved Workouts</Link>
+                  <Link className={"link"}to="/log">Log Your Workout</Link>
                 </div>
               </div>
           </div>
