@@ -3,12 +3,10 @@ import './App.css';
 import Home from './Routes/Home';
 import Workouts from './Routes/Workouts';
 import SavedRoutines from './Routes/SavedRoutines';
+import Log from './Routes/Log'
 import {
-    Link,
     Route,
     Switch,
-    Redirect,
-    withRouter
 } from 'react-router-dom'; 
 const lowerWorkouts = localStorage.getItem('lowerExercises');
 const upperWorkouts = localStorage.getItem('upperExercises');
@@ -38,6 +36,7 @@ render() {
       <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/workouts" component={Workouts} />
+          <Route path="/log" component={Log} />
           <Route  path="/routines" 
         render= {(props) => (
           <SavedRoutines

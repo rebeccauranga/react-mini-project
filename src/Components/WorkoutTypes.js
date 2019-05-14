@@ -38,9 +38,10 @@ class WorkoutTypes extends React.Component {
                         <GeneratedExercise type={this.state.selected} lowerExercises={this.state.lowerExercises} upperExercises={this.state.upperExercises} cardioExercises={this.state.cardio} completed={this.state.completed}/>
                         <div>
                             {
-                            (this.state.selected == '') ?
+                            (this.state.selected === '') ?
                             <div></div>
                             : 
+<<<<<<< HEAD
                             (this.state.selected == 'c') ? 
                             <div>
                                 <Time time={this.state.time} cardioExercises={this.state.cardio}/>
@@ -60,6 +61,14 @@ class WorkoutTypes extends React.Component {
                                 {/* <SaveButton exercises ={this.state.upperExercises}/> */}
                             </div>
                             :<div></div>
+=======
+                            (this.state.selected === 'c') ? 
+                            <Time time={this.state.time} cardioExercises={this.state.cardio}/>
+                            : 
+                            (this.state.selected === 'l' || 'u') ? 
+                            <SetsAndReps setNum={this.state.sets} repNum={this.state.reps} type={this.state.selected}/>
+                            : <div></div>
+>>>>>>> master
                         }
                         </div>
 
