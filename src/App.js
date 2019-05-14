@@ -10,14 +10,28 @@ import {
     Redirect,
     withRouter
 } from 'react-router-dom'; 
+const lowerWorkouts = localStorage.getItem('lowerExercises');
+const upperWorkouts = localStorage.getItem('upperExercises');
+const cardioWorkouts = localStorage.getItem('cardioExercises')
+
 
 class App extends React.Component {
   constructor(props) {
   super(props);
   this.state ={
-    saved: []
+    lower: {
+      lowerWorkouts
+    },
+    upper: {
+      upperWorkouts
+    },
+    cardio: {
+      cardioWorkouts
+    }
   }
 }
+
+
 render() {
   return (
     <div className="App">
@@ -28,7 +42,9 @@ render() {
         render= {(props) => (
           <SavedRoutines
           {...props}
-          routine={this.state.saved}
+          lowerRoutines={this.state.lower}
+          upperRoutines={this.state.upper}
+          cardioWorkouts={this.state.cardio}
           />
           )}
         />

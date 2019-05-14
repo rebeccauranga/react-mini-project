@@ -25,7 +25,7 @@ class SaveButton extends React.Component {
     // } 
    
         return (
-             <button onClick={this._save}>Save Workout</button>
+             <button onClick={this._save}>Save</button>
         )
     }
     _save = () => {
@@ -33,6 +33,10 @@ class SaveButton extends React.Component {
             return null
         } else if (this.props.type ==='l') {
             localStorage.setItem('lowerExercises', this.props.exercises)
+            if (localStorage.key(1)=== 'loweExercises') {
+                let oldItems = JSON.parse(localStorage.getItem('lowerExercises'));
+                console.log(oldItems)
+            }
         } else if (this.props.type === 'c') {
             localStorage.setItem('cardioExercises', this.props.exercises)
         } else if (this.props.type==='u') {
