@@ -1,4 +1,6 @@
 import React from 'react';
+import uuidv1 from 'uuid/v1';
+
 
 
 
@@ -11,24 +13,24 @@ class LowerSaved extends React.Component {
         }
     }
     render() {
+        const emptyArr = []
+        const lowerWorkouts = JSON.parse(localStorage.getItem('savedLowerExercises')) || [];
+        for (let i=0; i<lowerWorkouts.length; i++) {
+            emptyArr.push(lowerWorkouts[i])
+        }
+        console.log(emptyArr)
         
-        const lowerBodyExercises = ['Back Squats', 'Sumo Deadlifts', 'Goblet Squats', 'Romanian Deadlifts', 'Hip Thrusts', 'Jump Squats', 'Lunges', 'Curtsy Lunges', 'Split Squat', 'Front Squat', 'Step Ups', 'Hamstring Curls', 'Leg Extension', 'Leg Press', 'Reverse Lunges','Barbell Rows', 'Bicep Curls', 'Tricep Dips', 'Lat Pulldowns', 'Shoulder Press', 'Front Raises', 'Side Raises', 'Reverse Flys', 'Chest Press', 'Dumbbell Chest Press', 'Crazy 8s (Biceps)', 'Pull Ups', 'Push Ups', 'Arnold Presses', 'Face Plants','Sprints', 'Treadmill', 'StairMaster', 'Elliptical', 'Bike', 'Bike Sprints', 'Jump Squats', 'Burpees', 'Mountain Climbers', 'Skater Jumps', '180 Jump Squats', 'Elliptical Sprints', 'Frog Jumps', 'Swimming', 'Hiking'];
-        const lowerWorkouts = localStorage.getItem('lowerExercises').split(',')
-        const lowerarray = []
-        const lowerparsed =  lowerWorkouts.forEach(num =>{
-             lowerarray.push(parseInt(num))
-        })
-        console.log(lowerarray)
-        const mappedArray = lowerarray.map (w => (
-            <li key={w}>{lowerBodyExercises[w]}</li>
-                    ))
-        console.log(mappedArray)
         return (
-            <div>
-                <ul>
-                    {mappedArray}
-                </ul>
-            </div>
+            <td>{
+                (lowerWorkouts) ?
+                emptyArr.map (w => (
+                    <div key={uuidv1()}>{w}</div>
+                 ))
+                :
+                <div></div>
+            }
+                   
+            </td>
         )
     }
 }

@@ -2,6 +2,9 @@ import React from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom'; 
 import Log from './Log';
+import Table from 'react-bootstrap/Table';
+import uuidv1 from 'uuid/v1';
+
 
 import LowerSaved from '../Components/LowerSaved'
 import UpperSaved from '../Components/UpperSaved'
@@ -36,16 +39,34 @@ class SavedRoutines extends React.Component {
         <h2>EXERgen</h2>
         <h5>Revisit your favorite workouts.</h5>
         <div>
-            <LowerSaved lower={this.props.lowerRoutines} />
+
+        <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <LowerSaved lower ={this.props.lowerRoutines} />
+                            <LowerSavedSets />
+                            <LowerSavedReps />
+                        </tr>
+                    </tbody>
+                        
+            </Table>
+        </div>
+            {/* <LowerSaved lower={this.props.lowerRoutines} />
         </div>
         <div>
             <UpperSaved upper={this.props.upperRoutines} />
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
             <CardioSaved cardio={this.props.cardioRoutines} />
-        </div> 
+        </div>  */}
 
-         <Log value={this.props.value} />
             </header>
         </div>
         )
@@ -53,3 +74,34 @@ class SavedRoutines extends React.Component {
 }      
 
 export default SavedRoutines
+
+const lowerSets = JSON.parse(localStorage.getItem('savedLowerSets'));
+const lowerReps = JSON.parse(localStorage.getItem('savedLowerReps'));
+
+
+function LowerSavedSets() {
+    return (
+        <td>{
+            (lowerSets) ?
+            lowerSets.map(s=>(
+                <div key={uuidv1()}>{s}</div>  
+            ))
+            :
+            <div></div>
+        }
+            </td>   
+    )
+}
+function LowerSavedReps() {
+    return (
+        <td>{
+            (lowerReps) ?
+            lowerReps.map(r=>(
+                <div key={uuidv1()}>{r}</div>  
+            ))
+            :
+            <div></div>
+        }
+            </td>   
+    )
+}

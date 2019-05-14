@@ -33,8 +33,10 @@ class WorkoutTypes extends React.Component {
                     
                 </div>
                     <div className={"exAndSets"}>
+
                     {/* {this.state.title} */}
                         <GeneratedExercise type={this.state.selected} lowerExercises={this.state.lowerExercises} upperExercises={this.state.upperExercises} cardioExercises={this.state.cardio} completed={this.state.completed}/>
+
                         <div>
                             {
                             (this.state.selected === '') ?
