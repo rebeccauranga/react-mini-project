@@ -41,7 +41,7 @@ class GeneratedExercise extends React.Component {
                 }
                </ul>
 
-               {/* <div className={'saveAndLink'}>
+               <div className={'saveAndLink'}>
                     {(this.props.type==='l') ?
                     <SaveButton exercises ={this.props.lowerExercises} type={this.props.type}/>
                     :
@@ -53,7 +53,7 @@ class GeneratedExercise extends React.Component {
                     :
                     <div></div> 
                     }
-               </div> */}
+               </div>
 
                 
             </div>
