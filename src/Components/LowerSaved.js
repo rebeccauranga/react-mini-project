@@ -13,27 +13,24 @@ class LowerSaved extends React.Component {
         }
     }
     render() {
+        const emptyArr = []
+        const lowerWorkouts = JSON.parse(localStorage.getItem('savedLowerExercises')) || [];
+        for (let i=0; i<lowerWorkouts.length; i++) {
+            emptyArr.push(lowerWorkouts[i])
+        }
+        console.log(emptyArr)
         
-        const lowerBodyExercises = ['Back Squats', 'Sumo Deadlifts', 'Goblet Squats', 'Romanian Deadlifts', 'Hip Thrusts', 'Jump Squats', 'Lunges', 'Curtsy Lunges', 'Split Squat', 'Front Squat', 'Step Ups', 'Hamstring Curls', 'Leg Extension', 'Leg Press', 'Reverse Lunges','Barbell Rows', 'Bicep Curls', 'Tricep Dips', 'Lat Pulldowns', 'Shoulder Press', 'Front Raises', 'Side Raises', 'Reverse Flys', 'Chest Press', 'Dumbbell Chest Press', 'Crazy 8s (Biceps)', 'Pull Ups', 'Push Ups', 'Arnold Presses', 'Face Plants','Sprints', 'Treadmill', 'StairMaster', 'Elliptical', 'Bike', 'Bike Sprints', 'Jump Squats', 'Burpees', 'Mountain Climbers', 'Skater Jumps', '180 Jump Squats', 'Elliptical Sprints', 'Frog Jumps', 'Swimming', 'Hiking'];
-        const lowerWorkouts = JSON.parse(localStorage.getItem('savedLowerExercises'));
-        const lowerSets = JSON.parse(localStorage.getItem('savedLowerSets'));
-        const lowerReps = JSON.parse(localStorage.getItem('savedUpperReps'));
-    
         return (
-            <div>
-                <ul>
-                    {lowerWorkouts.map (w => (
-                        <li key={uuidv1()}>{w}</li>
-                     ))}
-                    {lowerSets.map(s=>(
-                            <li key={uuidv1()}>Sets: {s}</li>
-                    ))}
-                    {lowerReps.map(r=>(
-                            <li key={uuidv1()}>Sets: {r}</li>
-                        ))}
-            
-                </ul>
-            </div>
+            <td>{
+                (lowerWorkouts) ?
+                emptyArr.map (w => (
+                    <div key={uuidv1()}>{w}</div>
+                 ))
+                :
+                <div></div>
+            }
+                   
+            </td>
         )
     }
 }
