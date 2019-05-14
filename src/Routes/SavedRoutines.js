@@ -1,12 +1,7 @@
 import React from 'react';
 import '../App.css';
-import {
-    Link,
-    Route,
-    Switch,
-    Redirect,
-    withRouter
-} from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
+import Log from './Log';
 
 import LowerSaved from '../Components/LowerSaved'
 import UpperSaved from '../Components/UpperSaved'
@@ -20,6 +15,7 @@ class SavedRoutines extends React.Component {
             routine: []
         }
     }
+
     render() {
         console.log(this.props);
         // const lowerBodyExercises = ['Back Squats', 'Sumo Deadlifts', 'Goblet Squats', 'Romanian Deadlifts', 'Hip Thrusts', 'Jump Squats', 'Lunges', 'Curtsy Lunges', 'Split Squat', 'Front Squat', 'Step Ups', 'Hamstring Curls', 'Leg Extension', 'Leg Press', 'Reverse Lunges'];
@@ -45,6 +41,7 @@ class SavedRoutines extends React.Component {
         // const cardioparsed =  cardio.forEach(num =>{
         //      cardioarray.push(parseInt(num))
         // })
+
         return (
         <div className="App">
             <header className="App-header">
@@ -58,6 +55,7 @@ class SavedRoutines extends React.Component {
                 <div className="dropdown-content">
                     <Link className={"link"}to="/">Home</Link>
                     <Link className={"link"} to="/workouts"> Generate A Workout</Link>
+                    <Link className={"link"}to="/log">Log Your Workout</Link>
                 </div>
             </div>
         </div>
@@ -87,6 +85,7 @@ class SavedRoutines extends React.Component {
                 <li key={cardio[w]}>{cardio[w]}</li>
             ))}
         </ul> */}
+
             </header>
         </div>
         )

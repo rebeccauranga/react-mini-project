@@ -1,12 +1,8 @@
 import React from 'react';
 import '../App.css';
-import {
-    Link,
-    Route,
-    Switch,
-    Redirect,
-    withRouter
-} from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
+
+
 
 function Home() {
   return (
@@ -23,6 +19,7 @@ function Home() {
                         <div className="dropdown-content">
             <Link className={"link"} to="/workouts"> Generate A Workout</Link>
             <Link className={"link"}to="/routines">Saved Workouts</Link>
+            <Link className={"link"}to="/log">Log Your Workout</Link>
                         </div>
                       </div>
           </div>
