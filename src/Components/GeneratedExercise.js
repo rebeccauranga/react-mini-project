@@ -40,17 +40,22 @@ class GeneratedExercise extends React.Component {
                     <div></div>
                 }
                </ul>
-               {(this.props.type==='l') ?
-               <SaveButton exercises ={this.props.lowerExercises} type={this.props.type} sets={this.props.sets} reps ={this.props.reps}/>
-               :
-               (this.props.type==='u') ?
-               <SaveButton exercises ={this.props.upperExercises} type={this.props.type} sets={this.props.sets} reps ={this.props.reps}/>
-               :
-               (this.props.type==='c') ?
-               <SaveButton exercises ={this.props.cardioExercises} type={this.props.type} sets={this.props.sets} reps ={this.props.reps} time={this.props.time}/>
-               :
-               <div></div> 
-            }
+
+
+               <div className={'saveAndLink'}>
+                    {(this.props.type==='l') ?
+                    <SaveButton exercises ={this.props.lowerExercises} type={this.props.type}/>
+                    :
+                    (this.props.type==='u') ?
+                    <SaveButton exercises ={this.props.upperExercises} type={this.props.type}/>
+                    :
+                    (this.props.type==='c') ?
+                    <SaveButton exercises ={this.props.cardioExercises} type={this.props.type}/>
+                    :
+                    <div></div> 
+                    }
+               </div>
+
 
                 
             </div>
