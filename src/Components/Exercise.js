@@ -15,7 +15,9 @@ class Exercise extends Component {
                 <div className={`${classVis}`}>
                     {this.props.name}
                 </div> 
-                <button className={"done"} onClick={this._changeTextState}>Done</button>
+                <div className={"doneBtn"}>
+                    <button className={"done"} onClick={this._changeTextState}>Done</button>
+                </div>
             </div>
         );
     }

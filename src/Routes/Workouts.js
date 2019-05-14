@@ -14,29 +14,25 @@ class Workouts extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <div className={"NavBar"}>
-              <div className="dropdown">
-                  <span>
-                    <div className={"menu"}></div>
-                    <div className={"menu"}></div>
-                    <div className={"menu"}></div>
-                  </span>
-                <div className="dropdown-content">
-                  <Link className={"link"}to="/">Home</Link>
-                  <Link className={"link"}to="/routines">Saved Workouts</Link>
-                  <Link className={"link"}to="/log">Log Your Workout</Link>
-                </div>
-              </div>
+        <div className={"NavBar"}>
+          {/* <h2>EXERgen</h2> */}
+            <ul>
+              <li><Link className={"link"} to="/"> Home</Link></li>
+              <li> <Link className={"link"}to="/routines">REVISIT</Link></li>
+              <li><Link className={"link"}to="/log">TRACK</Link></li>
+            </ul>
           </div>
+                      
+      <div className={"small-shape"}></div>
+      <div className={"small-shape"}></div>
+      <div className={"small-shape"}></div>
 
 
-          <h2>EXERgen</h2>
-          <h5>Generate a workout below.</h5>
 
 
           <div className="Components">
             <WorkoutTypes />
-            <a href="https://ctt.ac/8wRC0" target="blank"> Share your workout! </a>
+            
           </div>
         </header>
       </div>

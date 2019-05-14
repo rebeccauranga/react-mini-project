@@ -25,7 +25,10 @@ class SaveButton extends React.Component {
     // } 
    
         return (
-             <button onClick={this._save}>Save</button>
+            <div>
+                <button onClick={this._save}>Save</button>
+                <a href="https://ctt.ac/8wRC0" target="blank"> Share your workout! </a>
+            </div>
         )
     }
     _save = () => {
