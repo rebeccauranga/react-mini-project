@@ -9,14 +9,14 @@ function Home() {
     <div className="App">
       <header className="App-header">
           <div className={"NavBar"}>
-                        <div class="dropdown">
+                        <div className="dropdown">
                         <span>
                           <div className={"menu"}></div>
                           <div className={"menu"}></div>
                           <div className={"menu"}></div>
                         
                         </span>
-                        <div class="dropdown-content">
+                        <div className="dropdown-content">
             <Link className={"link"} to="/workouts"> Generate A Workout</Link>
             <Link className={"link"}to="/routines">Saved Workouts</Link>
             <Link className={"link"}to="/log">Log Your Workout</Link>

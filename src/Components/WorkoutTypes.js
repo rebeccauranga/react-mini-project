@@ -2,6 +2,7 @@ import React from 'react';
 import SetsAndReps from './SetsAndReps';
 import GeneratedExercise from './GeneratedExercise'
 import Time from './Time'
+import SaveButton from './SaveButton'
 
 
 class WorkoutTypes extends React.Component {
@@ -35,18 +36,46 @@ class WorkoutTypes extends React.Component {
                     <div className={"exAndSets"}>
                     {this.state.title}
                         <GeneratedExercise type={this.state.selected} lowerExercises={this.state.lowerExercises} upperExercises={this.state.upperExercises} cardioExercises={this.state.cardio} completed={this.state.completed}/>
-
                         <div>
                             {
                             (this.state.selected === '') ?
                             <div></div>
                             : 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> cb473bb8cfb73f3f0134af093f3a3510f4b443d9
+                            (this.state.selected == 'c') ? 
+                            <div>
+                                <Time time={this.state.time} cardioExercises={this.state.cardio}/>
+                            </div>
+                            : 
+                            (this.state.selected == 'l') ? 
+                            <div> 
+                                <SetsAndReps setNum={this.state.sets} repNum={this.state.reps} type={this.state.selected}/>
+                                {/* <SaveButton exercises ={this.state.lowerExercises}/> */}
+
+                            {/* <SaveButton /> */}
+                            </div>
+                            : 
+                            (this.state.selected == 'u') ? 
+                            <div> 
+                                <SetsAndReps setNum={this.state.sets} repNum={this.state.reps} type={this.state.selected}/>
+                                {/* <SaveButton exercises ={this.state.upperExercises}/> */}
+                            </div>
+                            :<div></div>
+<<<<<<< HEAD
+=======
                             (this.state.selected === 'c') ? 
                             <Time time={this.state.time} cardioExercises={this.state.cardio}/>
                             : 
                             (this.state.selected === 'l' || 'u') ? 
                             <SetsAndReps setNum={this.state.sets} repNum={this.state.reps} type={this.state.selected}/>
                             : <div></div>
+>>>>>>> master
+=======
+
+>>>>>>> cb473bb8cfb73f3f0134af093f3a3510f4b443d9
                         }
                         </div>
 
@@ -73,7 +102,6 @@ class WorkoutTypes extends React.Component {
             selected: 'l',
             title: 'Lower Body Exercises'
         });
-       localStorage.setItem('lowerExercises', exercisesGen)
     }
 
     _updateUpperExercises = () => {
