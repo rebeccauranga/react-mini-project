@@ -86,7 +86,6 @@ class WorkoutTypes extends React.Component {
             selected: 'l',
             title: 'Lower Body Exercises'
         });
-       localStorage.setItem('lowerExercises', exercisesGen)
     }
 
     _updateUpperExercises = () => {
