@@ -41,7 +41,7 @@ class SaveButton extends React.Component {
         } else if (this.props.type ==='l') {
             const ex = JSON.parse(localStorage.getItem('savedLowerExercises')) || [];
             this.props.exercises.forEach(ind => {
-                ex.push(exercises[ind])
+                ex.push(' '+ exercises[ind]+ ', ')
             })
             localStorage.setItem('savedLowerExercises', JSON.stringify(ex))
 
@@ -83,7 +83,7 @@ class SaveButton extends React.Component {
             const ex = JSON.parse(localStorage.getItem('savedUpperExercises')) || [];
             // ex.push(this.props.exercises);
             this.props.exercises.forEach(ind => {
-                ex.push(exercises[ind+15])
+                ex.push(' ' + exercises[ind+15]+', ')
             })
             localStorage.setItem('savedUpperExercises', JSON.stringify(ex)) 
 

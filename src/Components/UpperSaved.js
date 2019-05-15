@@ -33,7 +33,7 @@ class UpperSaved extends React.Component {
             <tbody>
                     {(ex) ?
                     ex.map(w =>(
-                        <tr key={uuidv1()}>-{w}<UpperSavedSets /><UpperSavedReps /></tr>
+                        <tr key={uuidv1()}>-------------------------------{w}<UpperSavedSets /><UpperSavedReps /></tr>
                     ))
                     :
                     <div></div>
