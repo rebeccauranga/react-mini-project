@@ -13,18 +13,20 @@ class LowerSaved extends React.Component {
         }
     }
     render() {
-        const emptyArr = []
-        const lowerWorkouts = JSON.parse(localStorage.getItem('savedLowerExercises')) || [];
-        for (let i=0; i<lowerWorkouts.length; i++) {
-            emptyArr.push(lowerWorkouts[i])
-        }
-        console.log(emptyArr)
+        const ex = JSON.parse(localStorage.getItem('savedLowerArray')) || [];
+
+        // const emptyArr = []
+        // const lowerWorkouts = JSON.parse(localStorage.getItem('savedLowerExercises')) || [];
+        // for (let i=0; i<lowerWorkouts.length; i++) {
+        //     emptyArr.push(lowerWorkouts[i])
+        // }
+        // console.log(emptyArr)
         
         return (
             <tbody>{
-                (lowerWorkouts) ?
-                emptyArr.map (w => (
-                    <tr key={uuidv1()}>{w}<LowerSavedSets/><LowerSavedReps/></tr>
+                (ex) ?
+                ex.map (w => (
+                    <tr key={uuidv1()}>-------------------------------{w}<LowerSavedSets/><LowerSavedReps/></tr>
                  ))
                 :
                 <div></div>
