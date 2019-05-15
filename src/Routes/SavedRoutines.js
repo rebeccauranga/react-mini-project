@@ -48,13 +48,20 @@ class SavedRoutines extends React.Component {
                             <th>Reps</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <LowerSaved lower ={this.props.lowerRoutines} />
-                            <LowerSavedSets />
-                            <LowerSavedReps />
-                        </tr>
-                    </tbody>
+                   
+                    <LowerSaved lower ={this.props.lowerRoutines} />
+                        {/* <tr> */}
+                            {/* <LowerSaved lower ={this.props.lowerRoutines} /> */}
+                            {/* <LowerSavedSets /> */}
+                            {/* <LowerSavedReps /> */}
+                        {/* </tr> */}
+                        <UpperSaved upper ={this.props.upperRoutines} />
+
+                        {/* <tr> */}
+                            {/* <UpperSaved upper ={this.props.upperRoutines} /> */}
+                            {/* <UpperSavedSets /> */}
+                        {/* </tr> */}
+                    
                         
             </Table>
         </div>
@@ -74,34 +81,3 @@ class SavedRoutines extends React.Component {
 }      
 
 export default SavedRoutines
-
-const lowerSets = JSON.parse(localStorage.getItem('savedLowerSets'));
-const lowerReps = JSON.parse(localStorage.getItem('savedLowerReps'));
-
-
-function LowerSavedSets() {
-    return (
-        <td>{
-            (lowerSets) ?
-            lowerSets.map(s=>(
-                <div key={uuidv1()}>{s}</div>  
-            ))
-            :
-            <div></div>
-        }
-            </td>   
-    )
-}
-function LowerSavedReps() {
-    return (
-        <td>{
-            (lowerReps) ?
-            lowerReps.map(r=>(
-                <div key={uuidv1()}>{r}</div>  
-            ))
-            :
-            <div></div>
-        }
-            </td>   
-    )
-}

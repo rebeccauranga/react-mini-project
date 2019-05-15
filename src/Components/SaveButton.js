@@ -53,6 +53,18 @@ class SaveButton extends React.Component {
             sets.push(this.props.sets)
             localStorage.setItem('savedLowerSets', JSON.stringify(sets))
 
+            const uarr =  [];
+
+            var i,j,temparray,chunk = 4;
+            for (i=0,j=ex.length; i<j; i+=chunk) {
+            temparray = ex.slice(i,i+chunk);
+            console.log(temparray);
+            // do whatever
+            uarr.push(temparray)
+            localStorage.setItem('savedLowerArray', JSON.stringify(uarr))
+            }
+
+
         } else if (this.props.type === 'c') {
             const ex = JSON.parse(localStorage.getItem('cardioExercises')) || [];
             // ex.push(this.props.exercises);
@@ -82,6 +94,20 @@ class SaveButton extends React.Component {
             const sets = JSON.parse(localStorage.getItem('savedUpperSets')) || [];
             sets.push(this.props.sets)
             localStorage.setItem('savedUpperSets', JSON.stringify(sets))
+
+
+            const uarr =  [];
+
+            var i,j,temparray,chunk = 4;
+            for (i=0,j=ex.length; i<j; i+=chunk) {
+            temparray = ex.slice(i,i+chunk);
+            console.log(temparray);
+            // do whatever
+            uarr.push(temparray)
+            localStorage.setItem('savedUpperArray', JSON.stringify(uarr))
+
+            }
+
         }
     } 
 }
