@@ -21,18 +21,48 @@ class LowerSaved extends React.Component {
         console.log(emptyArr)
         
         return (
-            <td>{
+            <tbody>{
                 (lowerWorkouts) ?
                 emptyArr.map (w => (
-                    <div key={uuidv1()}>{w}</div>
+                    <tr key={uuidv1()}>{w}<LowerSavedSets/><LowerSavedReps/></tr>
                  ))
                 :
                 <div></div>
             }
                    
-            </td>
+            </tbody>
         )
     }
 }
 
 export default LowerSaved
+
+
+const lowerSets = JSON.parse(localStorage.getItem('savedLowerSets'));
+const lowerReps = JSON.parse(localStorage.getItem('savedLowerReps'));
+function LowerSavedSets() {
+    return (
+        <td>{
+            (lowerSets) ?
+            lowerSets.map(s=>(
+                <div key={uuidv1()}>{s}</div>  
+            ))
+            :
+            <div></div>
+        }
+            </td>   
+    )
+}
+function LowerSavedReps() {
+    return (
+        <td>{
+            (lowerReps) ?
+            lowerReps.map(r=>(
+                <div key={uuidv1()}>{r}</div>  
+            ))
+            :
+            <div></div>
+        }
+            </td>   
+    )
+}
